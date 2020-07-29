@@ -1,0 +1,4 @@
+gpiozero==1.4.1
+psutil==5.7.2
+schedule==0.6.0
+vcgencmd==0.1.1
