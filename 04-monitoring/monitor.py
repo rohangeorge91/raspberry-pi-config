@@ -19,7 +19,7 @@ try:
     job1.start()
     job1.join()
 except KeyboardInterrupt:
-    # if keyboar interrupt then kill the background thread and wait for death.
+    # if keyboard interrupt then kill the background thread and wait for death.
     job1.stop_execution()
     job1.join()
 

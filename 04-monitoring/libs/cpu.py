@@ -30,4 +30,4 @@ def print_cpu_information():
 def get_cpu_temp():
 	# the below key is exclusively for Rasp-pi
 	avg_cpu_temp = psutil.sensors_temperatures().get('cpu_thermal')
-	return avg_cpu_temp
+	return avg_cpu_temp[0].current
