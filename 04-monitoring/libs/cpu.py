@@ -1,4 +1,5 @@
 import psutil
+import collections
 
 # messages
 total_core_msg = 'Total Core (physical and logical) => {0}'
@@ -27,7 +28,15 @@ def print_cpu_information():
 	[print(cpu_freq_str.format(index, int(freq.current), int(util), int(
 			freq.min), int(freq.max))) for util, freq, index in cpu_zipped_value]
 
+# last temperature
+last_temperatures = collections.deque(maxlen=10)
+
 def get_cpu_temp():
+	"""Get the temperature for the CPU.
+	"""
+	global last_temperatures
 	# the below key is exclusively for Rasp-pi
-	avg_cpu_temp = psutil.sensors_temperatures().get('cpu_thermal')
-	return avg_cpu_temp[0].current
+	avg_cpu_temp = psutil.sensors_temperatures().get('cpu_thermal')[0].current
+	last_temperatures.append(avg_cpu_temp)
+
+	return (sum(last_temperatures) / len(last_temperatures))
