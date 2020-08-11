@@ -3,6 +3,7 @@ from libs.cpu import print_cpu_information
 from libs.screen import clear, move
 from libs.scheduler import scheduler
 
+
 def clear_cpu_information():
     """Move the location on the console to 0,0 and then print the cpu.
     """
