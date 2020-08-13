@@ -73,3 +73,6 @@ sudo apt -y install uhubctl
 
 # install libusb for the remote ir
 sudo apt -y install libusb-1.0-0-dev
+
+# install nodeks
+sudo apt install nodejs
