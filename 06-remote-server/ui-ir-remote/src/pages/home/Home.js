@@ -6,7 +6,6 @@ import Layout from '../../components/Layout';
 import { fetchCommands, executeCommands } from './actions/homeActions';
 
 export const mapStateToProps = (state) => {
-  console.log(state.home);
   return state.home;
 };
 
@@ -34,7 +33,7 @@ class RemotePage extends Component {
             return (
               <Col xs={12} sm={12} md={6} lg={4} xl={3} key={index}>
                 <Button onClick={() => {
-                    this.props.executeCmd(command);
+                    this.props.executeCmd(command.path);
                   }} className={'w-100 mb-2'}>
                   <h5>{`(${command.device}) ${command.operation}`}</h5>
                 </Button>

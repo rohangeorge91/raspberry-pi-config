@@ -76,3 +76,4 @@ sudo apt -y install libusb-1.0-0-dev
 
 # install nodeks
 sudo apt install nodejs
+sudo apt install npm
