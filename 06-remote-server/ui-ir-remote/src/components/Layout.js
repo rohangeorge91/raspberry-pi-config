@@ -19,9 +19,14 @@ class Layout extends PureComponent {
 						</Nav>
 						<Form inline>
 							<InputGroup>
-								<FormControl type="text" placeholder="Search" className="mr-2" />
+								<FormControl type="text" placeholder="Search" className="mr-2" value={this.props.searchText} onChange={(e) => {
+									const value = e.target.value;
+									this.props.onChange(value);
+								}}/>
 								<InputGroup.Append>
-									<Button variant="success">
+									<Button variant="success" onClick={(e) => {
+										this.props.onSearchClick();
+									}}>
 										<FontAwesomeIcon icon={faSearch} />
 									</Button>
 								</InputGroup.Append>

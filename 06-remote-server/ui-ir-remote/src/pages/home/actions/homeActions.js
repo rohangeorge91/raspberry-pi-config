@@ -1,5 +1,5 @@
 import fetch from '../../../common/helpers/fetch'
-import { UPDATE_ALL_COMMANDS, FETCH_ERROR } from '../reducer/homeReducer';
+import { UPDATE_ALL_COMMANDS, FETCH_ERROR, CHANGE_FILTER_TEXT, FILTER_ALL_COMMANDS } from '../reducer/homeReducer';
 
 const transformData = (data) => {
 	return data.map((datum) => {
@@ -31,4 +31,12 @@ export const executeCommands = (command) => (_) => {
 		}).catch((error) => {
 			console.error('Error: ', error);
 		});
-}
+};
+
+export const filterCommands = () => (dispatch) => {
+	dispatch({ type: FILTER_ALL_COMMANDS });
+};
+
+export const filterText = (searchText) => (dispatch) => {
+	dispatch({ type: CHANGE_FILTER_TEXT, data: searchText });
+};
