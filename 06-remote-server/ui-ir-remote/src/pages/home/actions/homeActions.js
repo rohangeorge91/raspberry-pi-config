@@ -3,7 +3,6 @@ import { UPDATE_ALL_COMMANDS, FETCH_ERROR, CHANGE_FILTER_TEXT, FILTER_ALL_COMMAN
 
 const transformData = (data) => {
 	return data.map((datum) => {
-		console.log(datum);
 		const [device, oper] = datum.path.split('_');
 		const operation = oper.split('-').join(' ').split('.')[0];
 		return {
@@ -27,7 +26,7 @@ export const fetchCommands = () => (dispatch) => {
 export const executeCommands = (command) => (_) => {
 	fetch(`/api/command/${command}`)
 		.then((data) => {
-			console.log('done');
+			console.log(data);
 		}).catch((error) => {
 			console.error('Error: ', error);
 		});

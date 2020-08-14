@@ -37,8 +37,8 @@ class RemotePage extends Component {
         {
           this.props.filteredCommands.map((command, index) => {
             return (
-              <Col xs={10} sm={10} md={6} lg={4} xl={3} key={index}>
-                <Button className={'w-100 mb-2'} onClick={() => {
+              <Col xs={12} sm={12} md={6} lg={4} xl={3} key={index}>
+                <Button className={'w-100 mb-2'} variant="secondary" onClick={() => {
                     this.props.executeCmd(command.path);
                   }}>
                   <h5>{`(${command.device}) ${command.operation}`}</h5>
