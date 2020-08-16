@@ -40,7 +40,7 @@ class Layout extends PureComponent {
 				{/* the body */}
 				{this.props.children}
 				{/* the footer */}
-				<footer className="footer">
+				<footer className="footer mt-5">
 					<Container>
 						<Row className="justify-content-center footer-text">
 							<span className="text-mute">
