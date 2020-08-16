@@ -17,7 +17,7 @@
   "scripts": {
     "dev": "concurrently --kill-others --names \"SERVER,CLIENT\" --prefix-colors \"green.bold,blue.bold\" --prefix \"[{name}]\" \"npm run dev-server\" \"npm run dev-client\"",
     "dev-server": "cross-env ENVIRONMENT=\"LOCAL-DEV\" nodemon -e js,json --watch app --watch views --inspect=0.0.0.0:9229 app/server.js",
-    "dev-client": "react-scripts start",
+    "dev-client": "BROWSER=none react-scripts start",
     "build": "react-scripts build",
     "start": "node app/server.js",
     "test": "react-scripts test",

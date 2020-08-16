@@ -45,7 +45,8 @@ if (ENVIRONMENT === LOCAL_DEV) {
 	const { createProxyMiddleware } = require('http-proxy-middleware');
 	app.use(createProxyMiddleware({
 		target: 'http://localhost:3000',
-		changeOrigin: true
+		changeOrigin: true,
+		ws: true
 	}));
 } else {
 	// The below will redirect all static request to either /build folder in PROD/QA/DEV

@@ -37,7 +37,7 @@ class RemotePage extends Component {
         {
           this.props.filteredCommands.map((command, index) => {
             return (
-              <Col xs={12} sm={12} md={6} lg={4} xl={3} key={index}>
+              <Col xs={11} sm={10} md={6} lg={4} xl={3} key={index}>
                 <Button className={'w-100 mb-2'} variant="secondary" onClick={() => {
                     this.props.executeCmd(command.path);
                   }}>
@@ -55,10 +55,10 @@ class RemotePage extends Component {
     return (
       <Layout searchText={this.props.filterText} onSearchClick={() => this.props.filterCommands()}
         onChange={(text) => this.props.changeSearchText(text)}>
-        <Container>
+        <Container fluid>
           <Row className={'content'}>
             <Col>
-              <h2>Remote UI</h2>
+              <h2 className="mt-4">Remote UI</h2>
               <br />
             </Col>
           </Row>

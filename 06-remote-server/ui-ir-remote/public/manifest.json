@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "IR Remote UI",
+  "name": "A really trival IR Remote app.",
   "icons": [
     {
       "src": "favicon.ico",
