@@ -4,7 +4,7 @@ const app = express();
 const port = 9000;
 
 const proxy = httpProxy.createProxyServer({
-	target: '192.168.50.144:9000',
+	target: 'http://192.168.50.114:9000',
 	changeOrigin: true
 });
 
