@@ -9,8 +9,8 @@ from libs.scheduler import scheduler
 
 # control variableds minutes_before_toggle tell how much time to wait before adding to schedule
 # lower and higher temp to tell went to schedule a shut-off
-minutes_before_toggle = 2
-lower_limit_temp = 35
+minutes_before_toggle = 1
+lower_limit_temp = 34
 higher_limit_temp = 37
 
 # toggle reminder
@@ -22,7 +22,7 @@ def turn_on_ac():
     """
     global last_ac_status
     os.system(
-        'bto_advanced_USBIR_cmd -d `cat ../06-remote-server/ir-codes/ac/temp-24-med-blower-ac.txt`')
+        'bto_advanced_USBIR_cmd -d `cat ../06-remote-server/ir-codes/ac/24c-med-blower.txt`')
     last_ac_status = 1
 
 
@@ -31,7 +31,7 @@ def turn_off_ac():
     """
     global last_ac_status
     os.system(
-        'bto_advanced_USBIR_cmd -d `cat ../06-remote-server/ir-codes/ac/off-ac.txt`')
+        'bto_advanced_USBIR_cmd -d `cat ../06-remote-server/ir-codes/ac/off.txt`')
     last_ac_status = 0
 
 
