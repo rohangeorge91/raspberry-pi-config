@@ -4,7 +4,7 @@ const { exec, execSync } = require("child_process");
 
 //path to the ir-codes files.
 const irCodes = 'ir-codes';
-const irCodePath = path.join(__dirname, '..', '..', irCodes);
+const irCodePath = path.join(__dirname, '..', '..', '..', irCodes);
 
 /**
  * Returns all the list of files from a given directory.
