@@ -1,0 +1,20 @@
+FROM gcc:latest AS irBuilder
+WORKDIR /home/root
+# update the apt so that we can get new libusb
+RUN apt -y update && apt -y upgrade && apt -y install libusb-1.0-0-dev
+RUN git clone https://github.com/Drunkar/bto_ir_advanced_cmd.git
+RUN cd bto_ir_advanced_cmd; make; make install
+RUN mkdir build
+RUN mv /usr/local/bin/bto_advanced_USBIR_cmd /home/root/build/bto_advanced_USBIR_cmd
+
+FROM python:3.7.9-stretch AS pyBuilder
+WORKDIR /home/root
+RUN mkdir pyserver
+COPY . pyserver
+RUN cd pyserver && pip3 install -r requirements.txt
+
+FROM python:3.6.12-alpine3.12
+WORKDIR /home/root/pyserver
+COPY --from=irBuilder /home/root/build/bto_advanced_USBIR_cmd /usr/local/bin/bto_advanced_USBIR_cmd
+COPY --from=pyBuilder /home/root/pyserver .
+CMD 'python ./monitor.py'
