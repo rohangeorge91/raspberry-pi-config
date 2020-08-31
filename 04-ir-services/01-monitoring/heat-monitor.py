@@ -22,7 +22,7 @@ def turn_on_ac():
     """
     global last_ac_status
     os.system(
-        'bto_advanced_USBIR_cmd -d `cat ../06-remote-server/ir-codes/ac/24c-med-blower.txt`')
+        'bto_advanced_USBIR_cmd -d `cat ./ir-codes/ac/24c-med-blower.txt`')
     last_ac_status = 1
 
 
@@ -31,7 +31,7 @@ def turn_off_ac():
     """
     global last_ac_status
     os.system(
-        'bto_advanced_USBIR_cmd -d `cat ../06-remote-server/ir-codes/ac/off.txt`')
+        'bto_advanced_USBIR_cmd -d `cat ./ir-codes/ac/off.txt`')
     last_ac_status = 0
 
 
