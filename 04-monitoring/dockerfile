@@ -7,14 +7,9 @@ RUN cd bto_ir_advanced_cmd; make; make install
 RUN mkdir build
 RUN mv /usr/local/bin/bto_advanced_USBIR_cmd /home/root/build/bto_advanced_USBIR_cmd
 
-FROM python:3.7.9-stretch AS pyBuilder
-WORKDIR /home/root
-RUN mkdir pyserver
-COPY . pyserver
-RUN cd pyserver && pip3 install -r requirements.txt
-
-FROM python:3.6.12-alpine3.12
+FROM python:3.7.9-stretch
 WORKDIR /home/root/pyserver
 COPY --from=irBuilder /home/root/build/bto_advanced_USBIR_cmd /usr/local/bin/bto_advanced_USBIR_cmd
-COPY --from=pyBuilder /home/root/pyserver .
+COPY . .	
+RUN pip3 install -r requirements.txt
 CMD 'python ./monitor.py'
