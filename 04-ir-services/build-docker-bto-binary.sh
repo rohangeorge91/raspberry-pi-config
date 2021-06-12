@@ -1,0 +1,1 @@
+docker build --file=btobinary.dockerfile -t vkputhukkeril/bto-binary:1.0.0 .
