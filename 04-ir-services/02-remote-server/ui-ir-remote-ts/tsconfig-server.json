@@ -1,0 +1,29 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"esModuleInterop": true,
+		"target": "es6",
+		"noImplicitAny": true,
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"sourceMap": true,
+		"outDir": "dist",
+		"baseUrl": ".",
+		"paths": {
+			"*": [
+				"node_modules/*"
+			]
+		}
+	},
+	"files": [
+		"app/server.ts"
+	],
+	"include": [
+		"**/*"
+	],
+	"exclude": [
+		"node_modules",
+		"src",
+		"**/*.spec.ts"
+	]
+}
