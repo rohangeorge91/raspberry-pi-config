@@ -159,3 +159,5 @@ yarn-error.logu*
 # plex local config (volume mount)
 *05-plex-media-server/config*
 
+# code workspace
+**/*.code-workspace

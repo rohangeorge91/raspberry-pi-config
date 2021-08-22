@@ -80,3 +80,6 @@ sudo apt -y install npm
 # install latest LTS version for nodejs
 sudo npm install -g n
 sudo n lts
+
+# more file watcher
+echo fs.inotify.max_user_watches=582222 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
