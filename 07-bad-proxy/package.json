@@ -9,7 +9,7 @@
   "author": "Verghese koshy (Rohan)",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "http-proxy": "^1.18.1"
   }
 }
